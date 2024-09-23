@@ -8,14 +8,36 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
-		extend: {
-			colors: {
-				primary: "#000066",
-				primary_light: "#5056AC",
-				primary_dark: "#07184A"
-			}
-		}
-	},
+    	extend: {
+    		colors: {
+    			primary: '#000066',
+    			primary_light: '#5056AC',
+    			primary_dark: '#07184A'
+    		},
+    		keyframes: {
+    			'accordion-down': {
+    				from: {
+    					height: '0'
+    				},
+    				to: {
+    					height: 'var(--radix-accordion-content-height)'
+    				}
+    			},
+    			'accordion-up': {
+    				from: {
+    					height: 'var(--radix-accordion-content-height)'
+    				},
+    				to: {
+    					height: '0'
+    				}
+    			}
+    		},
+    		animation: {
+    			'accordion-down': 'accordion-down 0.2s ease-out',
+    			'accordion-up': 'accordion-up 0.2s ease-out'
+    		}
+    	}
+    },
 	plugins: [require("tailwindcss-animate")],
 };
 export default config;
