@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-image: url('/gradient.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+@layer utilities {
+    .bg-light {
+        background-image: url('/gradient-light.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .bg-dark {
+        background-image: url('/gradient.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }

@@ -52,7 +52,7 @@ export default function Contact () {
                 </TableBody>
             </Table>
             <Link href={"/"}>
-                <Button className="text-2xl lg:text-lg bg-primary_light hover:border-2 hover:border-primary_light">
+                <Button className="text-2xl lg:text-lg bg-primary text-white dark:bg-primary_light dark:text-white hover:scale-105 transform transition-transform">
                     Regresar
                 </Button>
             </Link>

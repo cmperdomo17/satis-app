@@ -1,5 +1,12 @@
 export const indicadores = [
     {
+        "id": 0,
+        "nombre": "Todos los indicadores",
+        "descripcion": "Lista de todos los indicadores",
+        "valor": 0,
+        "color": "gray"
+    },
+    {
         "id": 1,
         "nombre": "Ejecución PETI",
         "descripcion": "Nivel de ejecución del Plan Estratégico de TI",
@@ -33,5 +40,33 @@ export const indicadores = [
         "descripcion": "Porcentaje de proyectos TI a tiempo y dentro del presupuesto",
         "valor": 500,
         "color": "purple"
+    },
+    {
+        "id": 6,
+        "nombre": "Cobertura Mesa",
+        "descripcion": "Porcentaje de casos atendidos por la Mesa de Servicio",
+        "valor": 600,
+        "color": "indigo"
+    },
+    {
+        "id": 7,
+        "nombre": "Tiempo de Respuesta",
+        "descripcion": "Promedio de tiempo de respuesta a los casos",
+        "valor": 700,
+        "color": "orange"
+    },
+    {
+        "id": 8,
+        "nombre": "Satisfacción del Cliente",
+        "descripcion": "Porcentaje de satisfacción del cliente",
+        "valor": 800,
+        "color": "pink"
+    },
+    {
+        "id": 9,
+        "nombre": "Casos Resueltos",
+        "descripcion": "Número de casos resueltos en el primer contacto",
+        "valor": 900,
+        "color": "cyan"
     }
 ]
