@@ -37,7 +37,7 @@ export default function IndicatorsDropdown() {
                 {indicadores.map((indicador, indice) => (
                     <DropdownMenuItem 
                         key={indicador.id}
-                        className="hover:underline cursor-pointer"
+                        className="hover:bg-gray-500/30 dark:hover:bg-primary_dark/30 cursor-pointer"
                         onSelect={() => handleIndicadorSelect(indicador.nombre)}
                     >
                         {indicador.nombre === "Todos los indicadores" ? (
