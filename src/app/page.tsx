@@ -51,12 +51,26 @@ export default function Home() {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+      <div className="flex gap-4">
+        <Link href={"/contact"}>
+          <Button className="text-2xl lg:text-lg bg-primary text-white dark:bg-primary_light dark:text-white hover:scale-105 transform transition-transform">
+            Contacto
+          </Button>
+        </Link>
 
-      <Link href={"/contact"}>
-        <Button className="text-2xl lg:text-lg bg-primary text-white dark:bg-primary_light dark:text-white hover:scale-105 transform transition-transform">
-          Contacto
-        </Button>
-      </Link>
+        <Link href={"/indicator1"}>
+          <Button className="text-2xl lg:text-lg bg-primary text-white dark:bg-primary_light dark:text-white hover:scale-105 transform transition-transform">
+            Indicador 1
+          </Button>
+        </Link>
+
+        <Link href={"/indicator2"}>
+          <Button className="text-2xl lg:text-lg bg-primary text-white dark:bg-primary_light dark:text-white hover:scale-105 transform transition-transform">
+            Indicador 2
+          </Button>
+        </Link>
+      </div>
+
     </div>
   );
 }
