@@ -9,15 +9,14 @@ import {
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { titillium_bold } from "@/utils/fonts"
 
 export default function Contact () {
     return (
         <div className="w-[70%] flex flex-col gap-10">
             <Table className="text-xl">
-                <TableCaption className={`bg-primary_light text-xl ${titillium_bold.className}`}>Lista de contacto</TableCaption>
+                <TableCaption className="bg-primary_light text-xl font-black">Lista de contacto</TableCaption>
                 <TableHeader>
-                    <TableRow className={titillium_bold.className}>
+                    <TableRow className="font-black">
                         <TableHead className="text-center">ID</TableHead>
                         <TableHead className="text-center">Name</TableHead>
                         <TableHead className="text-center">Status</TableHead>
