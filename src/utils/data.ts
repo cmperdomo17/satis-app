@@ -79,3 +79,23 @@ export const chartData = [
     { month: "May", desktop: 209, mobile: 130 },
     { month: "June", desktop: 214, mobile: 140 },
 ]
+
+export const logoSize = [
+    { 
+        mobile: 
+        {
+            width: 180,
+            height: 180
+        },
+        desktop: 
+        {
+            width: 230,
+            height: 230
+        },
+        tablet:
+        {
+            width: 200,
+            height: 200
+        }
+    }
+]
