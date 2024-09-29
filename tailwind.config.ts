@@ -12,7 +12,8 @@ const config: Config = {
     		colors: {
     			primary: '#000066',
     			primary_light: '#5056AC',
-    			primary_dark: '#07184A'
+    			primary_dark: '#07184A',
+				primary_extralight: '#828AE3',
     		},
     		keyframes: {
     			'accordion-down': {

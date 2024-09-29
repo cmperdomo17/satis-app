@@ -7,7 +7,6 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { Checkbox } from "@/components/ui/checkbox";
-import { titillium_bold } from "@/utils/fonts";
 
 export default function SideMenu() {
     return (
@@ -34,7 +33,7 @@ export default function SideMenu() {
 
             <SheetContent className="text-primary_dark bg-white dark:bg-primary_light dark:text-white">
                 <SheetHeader>
-                    <SheetTitle className={`${titillium_bold.className} text-3xl`}>
+                    <SheetTitle className="font-black text-3xl">
                         SATIS
                     </SheetTitle>
                     <SheetDescription className="text-lg">
@@ -42,12 +41,12 @@ export default function SideMenu() {
                     </SheetDescription>
                     <div className="flex gap-4 items-center">
                         <Checkbox className="dark:border-white text-white" />
-                        <label className={`text-primary_dark dark:text-white`}>Opción 1</label>
+                        <label className="text-primary_dark dark:text-white">Opción 1</label>
                     </div>
 
                     <div className="flex gap-4 items-center">
                         <Checkbox className="dark:border-white text-white" />
-                        <label className={`text-primary_dark dark:text-white`}>Opción 2</label>
+                        <label className="text-primary_dark dark:text-white">Opción 2</label>
                     </div>
 
                     <div className="flex gap-4 items-center">

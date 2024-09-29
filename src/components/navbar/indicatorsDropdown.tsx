@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { indicadores } from "@/utils/data";
 import {
     DropdownMenu,
@@ -20,15 +20,10 @@ export default function IndicatorsDropdown() {
     };
 
     return (
-        <DropdownMenu onOpenChange={setIsOpen}>
+        <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
             <DropdownMenuTrigger className="flex items-center gap-2 border-2 border-primary_dark dark:border-white rounded-xl font-normal py-1 px-2 outline-none">
-                <span>{selectedIndicador}</span>
-                {isOpen ? (
-                    <ChevronUp className="w-5 h-5" />
-                    ) : (
-                    <ChevronDown className="w-5 h-5" />
-                    )
-                }
+                <span className="text-xs md:text-base">{selectedIndicador}</span>
+                <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen && 'rotate-180'}`} />
             </DropdownMenuTrigger>
 
             <DropdownMenuContent className="bg-white dark:bg-primary_light border-primary dark:border-white">
