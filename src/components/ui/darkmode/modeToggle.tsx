@@ -28,7 +28,7 @@ export function ModeToggle() {
                 onClick={() => setTheme("light")}>
                     Light
                 </DropdownMenuItem>
-                <DropdownMenuItem className=" hover:bg-gray-500/20 dark:hover:bg-primary_dark/30"
+                <DropdownMenuItem className="hover:bg-gray-500/20 dark:hover:bg-primary_dark/30"
                 onClick={() => setTheme("dark")}>
                     Dark
                 </DropdownMenuItem>

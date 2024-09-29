@@ -1,7 +1,7 @@
 "use client"
 
 import UserAvatar from './userAvatar';
-import IndicatorsDropdown from './indicatorsDropdown';
+import IndicatorsCombobox from './indicatorsCombobox';
 import SideMenu from './sideMenu';
 import { ModeToggle } from '../ui/darkmode/modeToggle';
 import Logo from '../logo/logo';
@@ -15,7 +15,7 @@ export default function Navbar() {
                 <Logo />
             </Link>
             <div className="flex items-center gap-3 md:gap-8 md:items-end" >
-                <IndicatorsDropdown />
+                <IndicatorsCombobox />
                 <SideMenu />
                 <UserAvatar />
                 <ModeToggle />

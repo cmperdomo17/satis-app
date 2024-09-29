@@ -8,6 +8,7 @@
         background-size: cover;
         background-repeat: no-repeat;
     }
+
     .bg-dark {
         background-image: url('/gradient.png');
         background-size: cover;
@@ -22,6 +23,9 @@
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
+        --scrollbar-bg: #fff;
+        --scrollbar-thumb: #a8a8a8;
+        --scrollbar-thumb-hover: #888;
     }
 
     .dark {
@@ -30,5 +34,37 @@
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
+        --scrollbar-bg: #5056ac;
+        --scrollbar-thumb: #3a438e;
+        --scrollbar-thumb-hover: #2e3572;
     }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 30px;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
 }
