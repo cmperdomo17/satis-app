@@ -26,7 +26,7 @@ export default function IndicatorsDropdown() {
                 <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen && 'rotate-180'}`} />
             </DropdownMenuTrigger>
 
-            <DropdownMenuContent className="bg-white dark:bg-primary_light border-primary dark:border-white">
+            <DropdownMenuContent>
                 <DropdownMenuLabel>Indicadores</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {indicadores.map((indicador, indice) => (

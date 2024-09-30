@@ -1,19 +1,26 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Logo() {
-    const { theme } = useTheme();
+    const { resolvedTheme } = useTheme();
+    const [isLoaded, setIsLoaded] = useState(false);
 
-    const logoSrc = theme === 'light'
-        ? "/satis_dark.svg"
-        : "/satis_light.svg";
+    const logoSrc = resolvedTheme === 'light' ? "/satis_light.svg" : "/satis_dark.svg";
 
     return (
-        <Image
-            src={logoSrc}
-            alt="Satis"
-            width={220}
-            height={220}
-        />
+        <span>
+            <Image
+                src={logoSrc}
+                alt="Satis"
+                width={220}
+                height={220}
+                onLoadingComplete={() => setIsLoaded(true)}
+                style={{
+                    opacity: isLoaded ? 1 : 0,
+                    transition: 'opacity 0.3s ease-in-out'
+                }}
+            />
+        </span>
     );
 }

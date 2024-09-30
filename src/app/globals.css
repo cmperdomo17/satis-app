@@ -4,15 +4,11 @@
 
 @layer utilities {
     .bg-light {
-        background-image: url('/gradient-light.png');
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-image: linear-gradient(to right top, #cfcfcf, #d6d6d6, #dddddd, #e4e4e4, #ebebeb);
     }
 
     .bg-dark {
-        background-image: url('/gradient.png');
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-image: linear-gradient(to right top, #07184a, #1a2661, #2c3679, #3e4592, #5056ac);
     }
 }
 
