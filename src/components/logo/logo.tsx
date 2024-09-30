@@ -1,10 +1,19 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Logo() {
     const { resolvedTheme } = useTheme();
     const [isLoaded, setIsLoaded] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null; // Solo renderiza el logo cuando el tema esté montado
+    }
 
     const logoSrc = resolvedTheme === 'light' ? "/satis_light.svg" : "/satis_dark.svg";
 
