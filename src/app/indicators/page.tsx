@@ -51,25 +51,29 @@ export default function Indicators() {
                 </AccordionItem>
             </Accordion>
             <div className="flex gap-4">
+                <Link href={"/"}>
+                    <Button variant="custom">
+                        Regresar
+                    </Button>
+                </Link>
                 <Link href={"/contact"}>
                     <Button variant="custom">
                         Contacto
                     </Button>
                 </Link>
 
-                <Link href={"/indicator1"}>
+                <Link href={"/indicators/indicator1"}>
                     <Button variant="custom">
                         Indicador 1
                     </Button>
                 </Link>
 
-                <Link href={"/indicator2"}>
+                <Link href={"/indicators/indicator2"}>
                     <Button variant="custom">
                         Indicador 2
                     </Button>
                 </Link>
             </div>
-
         </div>
     );
 }

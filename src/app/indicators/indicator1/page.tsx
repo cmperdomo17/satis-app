@@ -1,38 +1,21 @@
 "use client"
 
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
-import { chartData } from "@/utils/data"
-import { ChartConfig,
-        ChartContainer, 
+import { chartData, chartConfig } from "./chartDataConfig"
+import { ChartContainer, 
         ChartTooltip, 
         ChartTooltipContent,
         ChartLegend, 
         ChartLegendContent
 } from "@/components/ui/chart"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { useTheme } from "next-themes"
-
-const chartConfig = {
-    desktop: {
-        label: "Desktop",
-        color: "#2563eb",
-    },
-    mobile: {
-        label: "Mobile",
-        color: "#60a5fa",
-    },
-    text_white: {
-        color: "#fff",
-    },
-    text_black: {
-        color: "#000",
-    },
-} satisfies ChartConfig
-
 
 export default function Indicator1 () {
     const {theme} = useTheme()
     return (
-        <div className="size-[350px] md:size-[550px] flex justify-center items-center">
+        <div className="size-[350px] md:size-[550px] flex flex-col gap-8 justify-center items-center">
             <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
                 <BarChart accessibilityLayer data={chartData}>
                     <CartesianGrid vertical={false} />
@@ -53,6 +36,11 @@ export default function Indicator1 () {
                     <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
                 </BarChart>
             </ChartContainer>
+            <Link href={"/indicators"}>
+                <Button variant="custom">
+                    Regresar
+                </Button>
+            </Link>
         </div>
     )
 }
