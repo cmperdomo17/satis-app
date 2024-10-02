@@ -3,7 +3,6 @@ import Navbar from "@/components/navbar/navbar";
 import { ThemeProvider } from "@/components/ui/darkmode/theme-provider"
 import "./globals.css";
 import DynamicBreadCrumb from "@/components/dynamicBreadcrumb/dynamicBreadcrumb";
-
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -13,14 +12,14 @@ export default function DynamicBreadCrumb() {
         <Breadcrumb>
             <BreadcrumbList>
                 {BreadCrumbList.map((item, index) => (
-                    <React.Fragment key={index}>
-                        <BreadcrumbItem>
+                    <>
+                        <BreadcrumbItem key={index}>
                             <BreadcrumbLink href={item.link}>
                                 {item.title}
                             </BreadcrumbLink>
                         </BreadcrumbItem>
-                        {index < BreadCrumbList.length - 1 && <BreadcrumbSeparator />}
-                    </React.Fragment>
+                        <BreadcrumbSeparator />
+                    </>
                 ))}
             </BreadcrumbList>
         </Breadcrumb>
