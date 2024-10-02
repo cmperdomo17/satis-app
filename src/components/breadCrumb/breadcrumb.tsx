@@ -1,27 +1,46 @@
+"use client";
+
+import React from 'react';
+import { usePathname } from 'next/navigation';
 import {
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
     BreadcrumbList,
     BreadcrumbSeparator,
+    BreadcrumbPage,
 } from "@/components/ui/breadcrumb"
-import { BreadCrumbList } from "./breadCrumbList"
 
-export default function BreadCrumb() {
+export default function DynamicBreadcrumb() {
+    const pathname = usePathname();
+    const pathSegments = pathname.split('/').filter(segment => segment !== '');
+
+    const breadcrumbItems = [
+        { title: 'Home', link: '/' },
+        ...pathSegments.map((segment, index) => ({
+            title: segment,
+            link: `/${pathSegments.slice(0, index + 1).join('/')}`,
+        })),
+    ];
+
     return (
         <Breadcrumb>
             <BreadcrumbList>
-                {BreadCrumbList.map((item, index) => (
-                    <>
-                        <BreadcrumbItem key={index}>
-                            <BreadcrumbLink href={item.link}>
-                                {item.title}
-                            </BreadcrumbLink>
+                {breadcrumbItems.map((item, index) => (
+                    <React.Fragment key={item.link}>
+                        <BreadcrumbItem>
+                            {index === breadcrumbItems.length - 1 ? (
+                                <BreadcrumbPage>{item.title}</BreadcrumbPage>
+                            ) : (
+                                <BreadcrumbLink href={item.link}>
+                                    {item.title}
+                                </BreadcrumbLink>
+                            )}
                         </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                    </>
+                        {index < breadcrumbItems.length - 1 && <BreadcrumbSeparator />}
+                    </React.Fragment>
                 ))}
             </BreadcrumbList>
         </Breadcrumb>
-    )
+    );
 }

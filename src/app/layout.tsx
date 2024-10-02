@@ -2,7 +2,7 @@ import { titillium_normal } from "@/utils/fonts";
 import Navbar from "@/components/navbar/navbar";
 import { ThemeProvider } from "@/components/ui/darkmode/theme-provider"
 import "./globals.css";
-import BreadCrumb from "@/components/breadCrumb/Breadcrumb";
+import DynamicBreadcrumb from "@/components/dynamicBreadcrumb/dynamicBreadcrumb";
 
 export default function RootLayout({
   children,
@@ -23,7 +23,7 @@ export default function RootLayout({
           <Navbar />
           <div className="min-h-screen w-full flex flex-col gap-4 justify-center items-center py-5 relative">
               <div className="absolute top-28 md:top-16 md:left-10">
-                  <BreadCrumb />
+                  <DynamicBreadcrumb />
               </div>
               <div className="flex flex-col items-center justify-center w-full">
                   {children}
