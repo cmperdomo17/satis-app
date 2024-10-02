@@ -10,6 +10,12 @@
     .bg-dark {
         background-image: linear-gradient(to right top, #07184a, #1a2661, #2c3679, #3e4592, #5056ac);
     }
+    .logo-light {
+        background-image: url('/satis_light.svg');
+    }
+    .logo-dark {
+        background-image: url('/satis_dark.svg');
+    }
 }
 
 @layer base {
