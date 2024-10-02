@@ -2,7 +2,7 @@ import { titillium_normal } from "@/utils/fonts";
 import Navbar from "@/components/navbar/navbar";
 import { ThemeProvider } from "@/components/ui/darkmode/theme-provider"
 import "./globals.css";
-import DynamicBreadCrumb from "@/components/dynamicBreadCrumb/dynamicBreadcrumb";
+import DynamicBreadCrumb from "@/components/dynamicBreadcrumb/dynamicBreadcrumb";
 
 export default function RootLayout({
   children,
