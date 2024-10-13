@@ -13,7 +13,7 @@ export default function Navbar() {
             <Link href={"/"} className="cursor-pointer">
                 <Logo />
             </Link>
-            <div className="flex items-center gap-3 md:gap-5 md:items-end">
+            <div className="flex items-center gap-3 md:gap-5">
                 <IndicatorsCombobox />
                 <SideMenu />
                 <UserAvatar />

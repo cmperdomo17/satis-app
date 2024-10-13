@@ -10,7 +10,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="min-h-full">
+    <html lang="en">
       <body
         className={`${titillium_normal.className} min-h-full bg-light dark:bg-dark overflow-y-auto overflow-x-hidden text-primary_dark dark:text-white`}
       >

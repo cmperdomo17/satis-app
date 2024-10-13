@@ -14,8 +14,8 @@ export default function SideMenu() {
             <SheetTrigger className="hover:scale-110 transform transition-transform cursor-pointer">
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
+                width="28"
+                height="28"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
