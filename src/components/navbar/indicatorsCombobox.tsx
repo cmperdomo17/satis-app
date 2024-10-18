@@ -5,6 +5,7 @@ import { Check, ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { usePathname } from 'next/navigation';
 import {
     Command,
     CommandEmpty,
@@ -20,10 +21,12 @@ import {
 } from "@/components/ui/popover"
 
 import { indicadores } from "@/utils/data";
+import Link from "next/link"
 
 export default function IndicatorsCombobox() {
     const [open, setOpen] = React.useState(false)
     const [value, setValue] = React.useState("")
+    const pathname = usePathname();
 
     return (
         <Popover open={open} onOpenChange={setOpen}>
@@ -35,7 +38,7 @@ export default function IndicatorsCombobox() {
                     size="dropdown"
                     className="w-[200px] items-center justify-between border-primary_dark dark:border-white hover:bg-primary_dark/10 dark:hover:bg-primary_dark/20"
                 >
-                    {value
+                    {value && pathname !== "/"
                         ? indicadores.find((indicador) => indicador.nombre === value)?.nombre
                         : "Seleccionar indicador..."}
                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${open && 'rotate-180'}`} />
@@ -56,7 +59,9 @@ export default function IndicatorsCombobox() {
                                         setOpen(false)
                                     }}
                                 >
-                                    {indicador.nombre}
+                                    <Link href={indicador.url || ""}>
+                                        {indicador.nombre}
+                                    </Link>
                                     <Check
                                         className={cn(
                                             "size-4 ml-auto mr-2",
