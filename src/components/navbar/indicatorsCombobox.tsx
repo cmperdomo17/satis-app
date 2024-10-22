@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Check, ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -22,10 +21,11 @@ import {
 
 import { indicadores } from "@/utils/data";
 import Link from "next/link"
+import { useState } from "react"
 
 export default function IndicatorsCombobox() {
-    const [open, setOpen] = React.useState(false)
-    const [value, setValue] = React.useState("")
+    const [open, setOpen] = useState(false)
+    const [value, setValue] = useState("")
     const pathname = usePathname();
 
     return (

@@ -12,7 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${titillium_normal.className} min-h-full bg-light dark:bg-dark overflow-y-auto overflow-x-hidden text-primary_dark dark:text-white`}
+        className={`${titillium_normal.className} min-h-screen bg-light dark:bg-dark text-primary_dark dark:text-white`}
       >
         <ThemeProvider
           attribute="class"
@@ -20,14 +20,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <div className="min-h-screen w-full flex flex-col gap-4 justify-center items-center py-5 relative">
-              <div className="absolute top-28 md:top-16 md:left-10">
-                  <DynamicBreadcrumb />
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow flex flex-col pt-20 md:pt-16">
+              <div className="px-4 md:px-10">
+                <DynamicBreadcrumb />
               </div>
-              <div className="flex flex-col items-center justify-center w-full">
-                  {children}
+              <div className="flex-grow p-3 flex flex-col items-center justify-center w-full">
+                {children}
               </div>
+            </main>
           </div>
         </ThemeProvider>
       </body>

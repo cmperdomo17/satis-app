@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
     return (
-        <nav className="fixed top-0 z-50 flex w-full flex-col items-center justify-center gap-2 py-1 text-sm font-semibold md:flex-row md:justify-between md:px-8 lg:gap-16 lg:text-base backdrop-blur-lg bg-transparent">
+        <nav className="fixed flex-shrink-0 top-0 z-50 flex w-full flex-col items-center justify-center gap-2 py-1 text-sm font-semibold md:flex-row md:justify-between md:px-8 lg:gap-16 lg:text-base backdrop-blur-lg bg-transparent">
             <Link href={"/"} className="cursor-pointer">
                 <Logo />
             </Link>

@@ -18,7 +18,7 @@ export default function DynamicBreadcrumb() {
     const breadcrumbItems = [
         { title: 'Home', link: '/' },
         ...pathSegments.map((segment, index) => ({
-            title: segment,
+            title: segment.charAt(0).toUpperCase() + segment.slice(1),
             link: `/${pathSegments.slice(0, index + 1).join('/')}`,
         })),
     ];
