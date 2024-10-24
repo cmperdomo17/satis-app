@@ -62,7 +62,6 @@ export default function IndicatorsCombobox() {
                                             }}
                                         >
                                             {indicador.nombre}
-
                                             <Check
                                                 className={cn(
                                                     "size-4 ml-auto mr-2",

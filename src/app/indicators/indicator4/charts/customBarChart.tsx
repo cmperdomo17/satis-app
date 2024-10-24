@@ -26,7 +26,7 @@ export default function CustomBarChart() {
 
     return (
         <div className="flex items-center gap-4">
-            <Card className="flex flex-col bg-white dark:bg-primary_dark shadow-xl shadow-primary/50 dark:shadow-white/10">
+            <Card className="flex flex-col bg-white dark:bg-primary_dark shadow-xl shadow-primary/50 dark:shadow-white/10 w-full">
                 <CardHeader className="items-center pb-0">
                     <CardTitle>Indicador de Satisfacción de Usuarios</CardTitle>
                     <CardDescription>Distribución de niveles de satisfacción</CardDescription>
@@ -34,7 +34,7 @@ export default function CustomBarChart() {
                 <CardContent className="flex-1 pb-0">
                     <ChartContainer
                         config={chartConfig}
-                        className="mx-auto h-[250px] w-full"
+                        className="h-[250px] w-full"
                     >
                         <ResponsiveContainer>
                             <BarChart
