@@ -51,26 +51,23 @@ export default function IndicatorsCombobox() {
                         <CommandEmpty>No se encontró un indicador.</CommandEmpty>
                         <CommandGroup>
                             {indicadores.map((indicador) => (
-                                <>
-                                    <Link href={indicador.url || ""}>
-                                        <CommandItem
-                                            key={indicador.id}
-                                            value={indicador.nombre}
-                                            onSelect={(currentValue) => {
-                                                setValue(currentValue)
-                                                setOpen(false)
-                                            }}
-                                        >
-                                            {indicador.nombre}
-                                            <Check
-                                                className={cn(
-                                                    "size-4 ml-auto mr-2",
-                                                    value === indicador.nombre ? "opacity-100" : "opacity-0"
-                                                )}
-                                            />
-                                        </CommandItem>
-                                    </Link>
-                                </>
+                                <Link href={indicador.url || ""} key={indicador.id}>
+                                    <CommandItem
+                                        value={indicador.nombre}
+                                        onSelect={(currentValue) => {
+                                            setValue(currentValue)
+                                            setOpen(false)
+                                        }}
+                                    >
+                                        {indicador.nombre}
+                                        <Check
+                                            className={cn(
+                                                "size-4 ml-auto mr-2",
+                                                value === indicador.nombre ? "opacity-100" : "opacity-0"
+                                            )}
+                                        />
+                                    </CommandItem>
+                                </Link>
                             ))}
                         </CommandGroup>
                     </CommandList>

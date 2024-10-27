@@ -68,7 +68,7 @@ export default function Indicator4() {
                             <div>
                                 <p className="text-sm font-medium text-muted-foreground">Meta Alcanzada</p>
                                 <div className="flex items-center gap-2">
-                                    <p className="text-2xl font-bold">{formatPercentage}%</p>
+                                    <p className="text-2xl font-bold">{formatPercentage}</p>
                                     <ArrowUpIcon className="h-4 w-4 text-green-500" />
                                 </div>
                             </div>
@@ -110,7 +110,7 @@ export default function Indicator4() {
                                 <div className="h-2 w-2 rounded-full bg-green-500" />
                             </div>
                             <span>
-                                El <span className="font-medium">{formatPercentage}%</span> de los usuarios reportan estar satisfechos o muy satisfechos con el servicio.
+                                El <span className="font-medium">{formatPercentage}</span> de los usuarios reportan estar satisfechos o muy satisfechos con el servicio.
                             </span>
                         </li>
                         <li className="flex items-start gap-2">

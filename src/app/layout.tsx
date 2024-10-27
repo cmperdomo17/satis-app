@@ -1,8 +1,8 @@
 import { titillium_normal } from "@/utils/fonts";
-import Navbar from "@/features/navigation/navbar/navbar";
-import { ThemeProvider } from "@/features/theme/theme-provider"
+import Navbar from "@/components/navbar/navbar";
+import { ThemeProvider } from "@/components/ui/theme/theme-provider"
 import "./globals.css";
-import DynamicBreadcrumb from "@/features/navigation/breadCrumb/components/breadcrumb";
+import DynamicBreadcrumb from "@/components/breadCrumb/components/breadcrumb";
 
 export default function RootLayout({
   children,
