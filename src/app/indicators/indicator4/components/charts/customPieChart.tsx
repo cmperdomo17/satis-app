@@ -1,7 +1,7 @@
 import { Label, Pie, PieChart } from "recharts"
 import { Star } from "lucide-react"
-import { useChartData } from "../useChartData/useChartData"
-import { chartConfig } from "../config/satisfactionConfig"
+import { useChartData } from "../../hooks/useChartData"
+import { chartConfig } from "../../config/satisfactionConfig"
 
 import {
     Card,
@@ -16,7 +16,7 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart"
-import { ChartDataResponse } from '../types/chartDataType';
+import { ChartDataResponse } from '../../types/chartDataType';
 
 export default function CustomPieChart() {
     const { chartData, totalSatisfaction, percentage }: ChartDataResponse = useChartData();

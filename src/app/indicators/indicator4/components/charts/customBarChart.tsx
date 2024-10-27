@@ -1,6 +1,6 @@
 import { BarChart, ResponsiveContainer, XAxis, YAxis, Bar, Cell } from "recharts"
-import { useChartData } from "../useChartData/useChartData"
-import { chartConfig } from "../config/satisfactionConfig"
+import { useChartData } from "../../hooks/useChartData"
+import { chartConfig } from "../../config/satisfactionConfig"
 import { Star } from "lucide-react"
 
 import {
@@ -16,13 +16,15 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart"
-import { ChartDataResponse } from '../types/chartDataType';
+import { ChartDataResponse } from '../../types/chartDataType';
+import { dataTransformers } from '../../utils/data-transformers';
 
 export default function CustomBarChart() {
     const { chartData, totalSatisfaction, percentage }: ChartDataResponse = useChartData();
 
-    const maxValue = Math.max(...chartData.map(item => item.total))
-    const roundedMax = Math.ceil(maxValue / 100) * 100 
+    const maxValue = dataTransformers.calculateMaxValue(chartData)
+    const roundedMax = dataTransformers.roundToNextMultipleOf100(maxValue)
+    const formatPercentage = dataTransformers.formatPercentage(percentage)
 
     return (
         <div className="flex items-center gap-4">
@@ -83,7 +85,7 @@ export default function CustomBarChart() {
                     <div className="flex items-center gap-2 font-medium leading-none">
                         <Star size={12} fill="currentColor" />
                         <span>
-                            {percentage.toFixed(2)}% de satisfacción
+                            {formatPercentage}% de satisfacción
                         </span>
                     </div>
                     <div className="leading-none text-muted-foreground">

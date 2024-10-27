@@ -1,10 +1,10 @@
 "use client"
 
-import UserAvatar from './userAvatar';
-import IndicatorsCombobox from './indicatorsCombobox';
-import SideMenu from './sideMenu';
-import { ModeToggle } from '../ui/darkmode/modeToggle';
-import Logo from '../logo/logo';
+import UserAvatar from './components/userAvatar';
+import IndicatorsCombobox from './components/indicatorsCombobox';
+import SideMenu from './components/sideMenu';
+import { ModeToggle } from '../../theme/modeToggle';
+import Logo from '../../../components/logo/logo';
 import Link from 'next/link';
 
 export default function Navbar() {

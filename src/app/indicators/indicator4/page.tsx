@@ -11,14 +11,15 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 
-import CustomPieChart from "./charts/customPieChart"
-import CustomBarChart from "./charts/customBarChart"
-import { useChartData } from "./useChartData/useChartData"
+import CustomPieChart from "./components/charts/customPieChart"
+import CustomBarChart from "./components/charts/customBarChart"
+import { useChartData } from "./hooks/useChartData"
 import { ChartDataResponse } from './types/chartDataType'
+import { dataTransformers } from "./utils/data-transformers"
 
 export default function Indicator4() {
     const { maxValue, totalSatisfaction, percentage }: ChartDataResponse = useChartData();
-    const percentageFixed = percentage.toFixed(2);
+    const formatPercentage = dataTransformers.formatPercentage(percentage);
 
     return (
         <div className="flex flex-col gap-8 max-w-6xl mx-auto w-full px-4">
@@ -67,7 +68,7 @@ export default function Indicator4() {
                             <div>
                                 <p className="text-sm font-medium text-muted-foreground">Meta Alcanzada</p>
                                 <div className="flex items-center gap-2">
-                                    <p className="text-2xl font-bold">{percentageFixed}%</p>
+                                    <p className="text-2xl font-bold">{formatPercentage}%</p>
                                     <ArrowUpIcon className="h-4 w-4 text-green-500" />
                                 </div>
                             </div>
@@ -109,7 +110,7 @@ export default function Indicator4() {
                                 <div className="h-2 w-2 rounded-full bg-green-500" />
                             </div>
                             <span>
-                                El <span className="font-medium">{percentageFixed}%</span> de los usuarios reportan estar satisfechos o muy satisfechos con el servicio.
+                                El <span className="font-medium">{formatPercentage}%</span> de los usuarios reportan estar satisfechos o muy satisfechos con el servicio.
                             </span>
                         </li>
                         <li className="flex items-start gap-2">
