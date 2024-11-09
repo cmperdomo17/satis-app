@@ -36,7 +36,7 @@ export default function IndicatorsCombobox() {
                     role="combobox"
                     aria-expanded={open}
                     size="dropdown"
-                    className="w-[200px] items-center justify-between border-primary_dark dark:border-white hover:bg-primary_dark/10 dark:hover:bg-primary_dark/20"
+                    className="w-auto gap-4 items-center justify-between border-primary_dark dark:border-white hover:bg-primary_dark/10 dark:hover:bg-primary_dark/20"
                 >
                     {value && pathname !== "/"
                         ? indicadores.find((indicador) => indicador.nombre === value)?.nombre

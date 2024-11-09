@@ -17,7 +17,7 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart"
 import { ChartDataResponse } from '../../types/chartDataType';
-import { dataTransformers } from '../../utils/data-transformers';
+import { dataTransformers } from '../../../../../utils/data-transformers';
 
 export default function CustomBarChart() {
     const { chartData, totalSatisfaction, percentage }: ChartDataResponse = useChartData();

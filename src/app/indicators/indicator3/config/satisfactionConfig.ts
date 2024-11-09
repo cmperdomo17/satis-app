@@ -1,19 +1,19 @@
 export const chartConfig = {
     "1": {
         label: "Muy satisfecho",
-        color: "hsl(var(--chart-1))",
+        color: "#8FD9A8",    // Verde pastel brillante - muy positivo
     },
     "2": {
         label: "Satisfecho",
-        color: "hsl(var(--chart-2))",
+        color: "#B5EAD7",    // Verde menta suave - positivo
     },
     "3": {
         label: "Poco satisfecho",
-        color: "hsl(var(--chart-3))",
+        color: "#FFD7BA",    // Naranja melocotón suave - algo negativo
     },
     "4": {
         label: "Insatisfecho",
-        color: "hsl(var(--chart-4))",
+        color: "#FFB7B2",    // Rojo coral suave - negativo
     },
 }
 

@@ -15,7 +15,7 @@ import CustomPieChart from "./components/charts/customPieChart"
 import CustomBarChart from "./components/charts/customBarChart"
 import { useChartData } from "./hooks/useChartData"
 import { ChartDataResponse } from './types/chartDataType'
-import { dataTransformers } from "./utils/data-transformers"
+import { dataTransformers } from "@/utils/data-transformers"
 
 export default function Indicator4() {
     const { maxValue, totalSatisfaction, percentage }: ChartDataResponse = useChartData();
