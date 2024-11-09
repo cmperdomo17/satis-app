@@ -3,8 +3,8 @@ const nextConfig = {
     async rewrites() {
         return [
             {
-                source: "/api/indicador4", // Nueva ruta de la API
-                destination: "http://localhost:3001/indicador4", // Endpoint de la API
+                source: "/api/indicador3", // Nueva ruta de la API
+                destination: "http://localhost:3002/indicador4", // Endpoint de la API
             },
             // {
             //     source: "/api/indicador7", 

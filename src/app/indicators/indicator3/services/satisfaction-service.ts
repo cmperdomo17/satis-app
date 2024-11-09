@@ -7,7 +7,7 @@ export class SatisfactionService {
     // Obtener y formatear datos
     static async fetchSatisfactionData() {
         try {
-            const response = await axios.get("/api/indicador4");
+            const response = await axios.get("/api/indicador3");
             return this.formatChartData(response.data);
         } catch (error) {
             console.error('Error fetching satisfaction data:', error);
