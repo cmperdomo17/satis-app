@@ -1,46 +1,57 @@
-"use client"
+"use client";
 
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
-import { chartData, chartConfig } from "./chartDataConfig"
-import { ChartContainer, 
-        ChartTooltip, 
-        ChartTooltipContent,
-        ChartLegend, 
-        ChartLegendContent
-} from "@/components/ui/chart"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { useTheme } from "next-themes"
+import CustomBarChart from "./components/charts/customBarChart";
+import CustomPieChart from "./components/charts/customPieChart";
+import CustomCard from "./components/ui/customCard";
+import { chartConfig } from "./config/timesDataConfig";
+import { useTimesData } from "./hooks/useTimesData";
 
-export default function Indicator1 () {
-    const {theme} = useTheme()
-    return (
-        <div className="size-[350px] md:size-[550px] flex flex-col gap-8 justify-center items-center">
-            <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
-                <BarChart accessibilityLayer data={chartData}>
-                    <CartesianGrid vertical={false} />
-                    <XAxis
-                        dataKey="month"
-                        tickLine={false}
-                        tickMargin={10}
-                        axisLine={false}
-                        tickFormatter={(value) => value.slice(0, 3)}
-                        stroke={theme === "dark" ? 
-                            chartConfig.text_white.color
-                            : chartConfig.text_black.color
-                        }
-                    />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <ChartLegend content={<ChartLegendContent />} />
-                    <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-                    <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
-                </BarChart>
-            </ChartContainer>
-            <Link href={"/indicators"}>
-                <Button variant="custom">
-                    Regresar
-                </Button>
-            </Link>
+import FiltersSection from "./components/sections/filtersSection";
+
+export default function () {
+  const { timesData } = useTimesData();
+
+  if (!timesData || !timesData.details) {
+    return <div>Cargando...</div>;
+  }
+
+  return (
+    <div className="flex flex-col gap-8 max-w-6xl mx-auto w-full px-4">
+      {/*Average time, median time and type section*/}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto w-full px-4">
+        {/* Average time section */}
+        <CustomCard
+          title="Tiempo Promedio de Resolución"
+          data={`${timesData.averageResolutionTime.toFixed(2)} horas`}
+        />
+
+        {/* Most frequent resolution type section*/}
+        <CustomCard
+          title="Tipo de Resolución más Frecuente"
+          data={chartConfig[timesData.mostFrequentResolutionType].label}
+        />
+
+        {/* Median time section */}
+        <CustomCard
+          title="Tiempo Medio de Resolución"
+          data={`${timesData.medianResolutionTime.toFixed(2)} horas`}
+        />
+      </div>
+
+      {/* Charts Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Distribución por Barras</h3>
+          <CustomBarChart data={timesData.resolutionTypeFrequency} />
         </div>
-    )
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Distribución Circular</h3>
+          <CustomPieChart data={timesData.resolutionTypeFrequency} />
+        </div>
+      </div>
+
+      {/* Filters section */}
+      <FiltersSection></FiltersSection>
+    </div>
+  );
 }
