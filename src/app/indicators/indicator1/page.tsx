@@ -8,7 +8,7 @@ import { useTimesData } from "./hooks/useTimesData";
 
 import FiltersSection from "./components/sections/filtersSection";
 
-export default function () {
+export default function Indicador1() {
   const { timesData } = useTimesData();
 
   if (!timesData || !timesData.details) {
@@ -21,18 +21,21 @@ export default function () {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto w-full px-4">
         {/* Average time section */}
         <CustomCard
+          key={"averageTimeCard"}
           title="Tiempo Promedio de Resolución"
           data={`${timesData.averageResolutionTime.toFixed(2)} horas`}
         />
 
         {/* Most frequent resolution type section*/}
         <CustomCard
+          key={"mostFrequentTypeCard"}
           title="Tipo de Resolución más Frecuente"
           data={chartConfig[timesData.mostFrequentResolutionType].label}
         />
 
         {/* Median time section */}
         <CustomCard
+          key={"medianTimeCard"}
           title="Tiempo Medio de Resolución"
           data={`${timesData.medianResolutionTime.toFixed(2)} horas`}
         />

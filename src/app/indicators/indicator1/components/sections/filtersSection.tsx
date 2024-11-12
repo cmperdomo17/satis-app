@@ -17,10 +17,13 @@ export default function FiltersSection() {
             key={filterKey}
             className="space-y-4 bg-white dark:bg-primary_dark shadow-xl shadow-primary/50 dark:shadow-white/10 rounded-2xl py-4 w-auto"
           >
-            <h3 className="font-semibold text-lg text-center">
+            <h3
+              key={`title-${filterKey}`}
+              className="font-semibold text-lg text-center"
+            >
               {filterConfig.label}
             </h3>
-            <div className="space-y-1">
+            <div key={`container-${filterKey}`} className="space-y-1">
               {filterConfig.values.map((value, index) => (
                 <div key={index} className="flex items-center pl-6 w-auto">
                   <Checkbox

@@ -21,7 +21,7 @@ interface CustomPieChartProps {
 
 export default function CustomPieChart({ data }: CustomPieChartProps) {
   const sortedData = Object.entries(data)
-    .filter(([_, value]) => value !== undefined)
+    .filter(([, value]) => value !== undefined)
     .sort(([, valueA], [, valueB]) => (valueB || 0) - (valueA || 0))
     .map(([key, value]) => ({ type: key as ResolutionTypeKey, total: value }));
 

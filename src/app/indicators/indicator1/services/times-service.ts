@@ -1,4 +1,4 @@
-import axios, { responseEncoding } from "axios";
+import axios from "axios";
 import { DataDetailsResponse, ResponseData } from "../types/requestApiType";
 
 export class TimeService {
