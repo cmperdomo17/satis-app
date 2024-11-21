@@ -7,13 +7,41 @@ import { chartConfig } from "./config/timesDataConfig";
 import { useTimesData } from "./hooks/useTimesData";
 
 import FiltersSection from "./components/sections/filtersSection";
+import { useState } from "react";
 
 export default function Indicador1() {
-  const { timesData } = useTimesData();
+  const [filters, setFilters] = useState<Record<string, string[]>>({});
+  const { timesData } = useTimesData(filters);
 
-  if (!timesData || !timesData.details) {
+  if (!timesData || !timesData.globalMetrics) {
     return <div>Cargando...</div>;
   }
+
+  const updateFilters = (key: string, value: string, isChecked: boolean) => {
+    setFilters((prevFilters) => {
+      console.log(prevFilters);
+      const updatedFilters = { ...prevFilters };
+
+      if (isChecked) {
+        if (updatedFilters[key]) {
+          updatedFilters[key] = [...updatedFilters[key], value];
+        } else {
+          updatedFilters[key] = [value];
+        }
+      } else {
+        if (updatedFilters[key]) {
+          updatedFilters[key] = updatedFilters[key].filter(
+            (item) => item !== value
+          );
+          if (updatedFilters[key].length === 0) {
+            delete updatedFilters[key];
+          }
+        }
+      }
+
+      return updatedFilters;
+    });
+  };
 
   return (
     <div className="flex flex-col gap-8 max-w-6xl mx-auto w-full px-4">
@@ -23,21 +51,28 @@ export default function Indicador1() {
         <CustomCard
           key={"averageTimeCard"}
           title="Tiempo Promedio de Resolución"
-          data={`${timesData.averageResolutionTime.toFixed(2)} horas`}
+          data={`${timesData.globalMetrics.averageResolutionTime.toFixed(
+            2
+          )} horas`}
         />
 
         {/* Most frequent resolution type section*/}
         <CustomCard
           key={"mostFrequentTypeCard"}
           title="Tipo de Resolución más Frecuente"
-          data={chartConfig[timesData.mostFrequentResolutionType].label}
+          data={
+            chartConfig[timesData.globalMetrics.mostFrequentResolutionType]
+              .label
+          }
         />
 
         {/* Median time section */}
         <CustomCard
           key={"medianTimeCard"}
           title="Tiempo Medio de Resolución"
-          data={`${timesData.medianResolutionTime.toFixed(2)} horas`}
+          data={`${timesData.globalMetrics.medianResolutionTime.toFixed(
+            2
+          )} horas`}
         />
       </div>
 
@@ -45,16 +80,24 @@ export default function Indicador1() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Distribución por Barras</h3>
-          <CustomBarChart data={timesData.resolutionTypeFrequency} />
+          <CustomBarChart
+            data={timesData.globalMetrics.resolutionTypeFrequency}
+          />
         </div>
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Distribución Circular</h3>
-          <CustomPieChart data={timesData.resolutionTypeFrequency} />
+          <CustomPieChart
+            data={timesData.globalMetrics.resolutionTypeFrequency}
+          />
         </div>
       </div>
 
       {/* Filters section */}
-      <FiltersSection></FiltersSection>
+
+      <FiltersSection
+        data={timesData}
+        updateFilters={updateFilters}
+      ></FiltersSection>
     </div>
   );
 }

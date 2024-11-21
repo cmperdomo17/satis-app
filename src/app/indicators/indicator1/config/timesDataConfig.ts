@@ -9,22 +9,15 @@ export const chartConfig = {
 };
 
 export const filtersConfig = {
-  resolutionTypes: {
-    label: "Tipos de Resolución",
-    values: Object.entries(chartConfig).map(([key, value]) => ({
-      type: key,
-      ...value,
-    })),
-  },
-  urgencyLevels: {
+  urgency: {
     label: "Niveles de Urgencia",
     values: [1, 2, 3, 4],
   },
-  impactLevels: {
+  impact: {
     label: "Niveles de Impacto",
     values: [1, 2, 3],
   },
-  priorityLevels: {
+  priority: {
     label: "Niveles de Prioridad",
     values: [1, 2, 3, 4],
   },

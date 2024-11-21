@@ -17,20 +17,27 @@ export type ResolutionTypeFrequencyResponse = {
   training: number;
 };
 
-export type DataDetailsResponse = {
-  request_type: string;
-  impact: number;
-  priority: number;
-  urgency: number;
-  origin: "mail" | "monitoring" | "phone" | "portal";
-  averageResolutionTime: number;
-  mostFrequentResolutionType: ResolutionTypeKey;
-};
+// export type DataDetailsResponse = {
+//   request_type: string;
+//   impact: number;
+//   priority: number;
+//   urgency: number;
+//   origin: "mail" | "monitoring" | "phone" | "portal";
+//   averageResolutionTime: number;
+//   mostFrequentResolutionType: ResolutionTypeKey;
+// };
 
 export type ResponseData = {
-  averageResolutionTime: number;
-  medianResolutionTime: number;
-  mostFrequentResolutionType:ResolutionTypeKey;
-  resolutionTypeFrequency: ResolutionTypeFrequencyResponse;
-  details: DataDetailsResponse[];
+  globalMetrics: {
+    averageResolutionTime: number;
+    medianResolutionTime: number;
+    mostFrequentResolutionType: ResolutionTypeKey;
+    resolutionTypeFrequency: ResolutionTypeFrequencyResponse;
+  };
+  filteredMetrics?: {
+    averageResolutionTime: number;
+    medianResolutionTime: number;
+    mostFrequentResolutionType: ResolutionTypeKey;
+    resolutionTypeFrequency: ResolutionTypeFrequencyResponse;
+  };
 };

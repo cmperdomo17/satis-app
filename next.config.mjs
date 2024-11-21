@@ -12,7 +12,7 @@ const nextConfig = {
       },
       {
         source: "/api/indicador1",
-        destination: "http://localhost:3000/requirements/indicador1",
+        destination: "http://localhost:3002/requirements/indicador1",
       },
       // {
       //     source: "/api/indicador8",

@@ -16,16 +16,17 @@ import { chartConfig } from "../../config/timesDataConfig";
 import { ResolutionTypeKey } from "../../types/requestApiType";
 
 interface CustomPieChartProps {
-  data: Record<ResolutionTypeKey, number | undefined>;
+  data: Record<ResolutionTypeKey, number | undefined> | undefined;
 }
 
 export default function CustomPieChart({ data }: CustomPieChartProps) {
+  if (!data) return null;
+
   const sortedData = Object.entries(data)
     .filter(([, value]) => value !== undefined)
     .sort(([, valueA], [, valueB]) => (valueB || 0) - (valueA || 0))
     .map(([key, value]) => ({ type: key as ResolutionTypeKey, total: value }));
 
-  console.log(sortedData);
   return (
     <div className="flex items-center gap-4">
       <Card className="flex flex-col bg-white dark:bg-primary_dark shadow-xl shadow-primary/50 dark:shadow-white/10">

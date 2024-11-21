@@ -18,10 +18,11 @@ import { chartConfig } from "../../config/timesDataConfig";
 import { ResolutionTypeKey } from "../../types/requestApiType";
 
 interface CustomBarChartProps {
-  data: Record<ResolutionTypeKey, number | undefined>;
+  data: Record<ResolutionTypeKey, number | undefined> | undefined;
 }
 
 export default function CustomBarChart({ data }: CustomBarChartProps) {
+  if (!data) return null;
   const sortedData = Object.entries(data)
     .filter(([, value]) => value !== undefined)
     .sort(([, valueA], [, valueB]) => (valueB || 0) - (valueA || 0))
