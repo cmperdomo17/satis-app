@@ -15,8 +15,6 @@ export class TimeService {
           });
         });
       }
-      
-      console.log(queryParams.toString());
 
       const response = await axios.get<ResponseData>(
         `/api/indicador1?${queryParams.toString()}`

@@ -29,17 +29,10 @@ export const indicadores = [
     },
     {
         id: 5,
-        nombre: "Tasa de Resolución",
-        descripcion: "Tasa de Resolución de Incidencias por la División TIC",
-        objetivo: "Mide el porcentaje de problemas reportados que fueron resueltos en comparación con el total de problemas registrados en la plataforma SATIS. Este indicador evalúa la efectividad de la División TIC en la resolución de incidencias y su capacidad para mantener la funcionalidad operativa en los sistemas de la universidad.",
-        url: "/indicators/indicator5",
-    },
-    {
-        id: 6,
-        nombre: "Productividad Analistas",
-        descripcion: "Tasa de Cierre de Tickets de Soporte por Analista en el Área de TI",
+        nombre: "Productividad Equipos",
+        descripcion: "Tasa de Cierre de Tickets de Soporte por cada Equipo en el Área de TI",
         objetivo: "Mide la cantidad de tickets de soporte cerrados por cada empleado del equipo de TI. Este indicador es esencial para identificar problemas en el rendimiento individual y colectivo, evaluando la eficacia del equipo en resolver incidencias y su capacidad para mantener los estándares de productividad. Ayuda a detectar brechas en el rendimiento, posibles deficiencias en la formación y la falta de estandarización en los procedimientos de soporte.",
-        url: "/indicators/indicator6",
+        url: "/indicators/indicator5",
     },
     {
         id: 7,

@@ -8,6 +8,8 @@ import { useTimesData } from "./hooks/useTimesData";
 
 import FiltersSection from "./components/sections/filtersSection";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Indicador1() {
   const [filters, setFilters] = useState<Record<string, string[]>>({});
@@ -98,6 +100,15 @@ export default function Indicador1() {
         data={timesData}
         updateFilters={updateFilters}
       ></FiltersSection>
+
+      {/* Back Button */}
+      <div className="flex justify-center pb-8">
+        <Link href={"/indicators"}>
+          <Button variant="custom" className="min-w-[200px]">
+            Regresar
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

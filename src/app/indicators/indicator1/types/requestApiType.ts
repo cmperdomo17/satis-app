@@ -17,16 +17,6 @@ export type ResolutionTypeFrequencyResponse = {
   training: number;
 };
 
-// export type DataDetailsResponse = {
-//   request_type: string;
-//   impact: number;
-//   priority: number;
-//   urgency: number;
-//   origin: "mail" | "monitoring" | "phone" | "portal";
-//   averageResolutionTime: number;
-//   mostFrequentResolutionType: ResolutionTypeKey;
-// };
-
 export type ResponseData = {
   globalMetrics: {
     averageResolutionTime: number;
