@@ -43,8 +43,11 @@ export default function FiltersSection({
                     className="rounded data-[state=checked]:bg-black text-white dark:data-[state=checked]:bg-white dark:text-black border-black dark:border-white"
                     onCheckedChange={(isChecked) => {
                       if (typeof isChecked === "boolean") {
-                        console.log("Actualiza");
-                        updateFilters(filterKey, value.toString(), isChecked);
+                        updateFilters(
+                          filterKey,
+                          value[0].toString(),
+                          isChecked
+                        );
                       }
                     }}
                   />
@@ -52,7 +55,7 @@ export default function FiltersSection({
                     htmlFor={`${filterKey}-${index}`}
                     className="ml-2 pl-2"
                   >
-                    {`Nivel ${value}`}
+                    {`${value[1]} (${value[0]})`}
                   </label>
                 </div>
               ))}
@@ -104,7 +107,9 @@ export default function FiltersSection({
         </div>
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Distribución Circular</h3>
-          <CustomPieChart data={data.filteredMetrics?.resolutionTypeFrequency} />
+          <CustomPieChart
+            data={data.filteredMetrics?.resolutionTypeFrequency}
+          />
         </div>
       </div>
     </div>

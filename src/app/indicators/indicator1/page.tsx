@@ -21,7 +21,6 @@ export default function Indicador1() {
 
   const updateFilters = (key: string, value: string, isChecked: boolean) => {
     setFilters((prevFilters) => {
-      console.log(prevFilters);
       const updatedFilters = { ...prevFilters };
 
       if (isChecked) {
