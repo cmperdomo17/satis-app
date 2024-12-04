@@ -28,13 +28,6 @@ export const indicadores = [
         url: "/indicators/indicator4",
     },
     {
-        id: 5,
-        nombre: "Tasa de Resolución",
-        descripcion: "Tasa de Resolución de Incidencias por la División TIC",
-        objetivo: "Mide el porcentaje de problemas reportados que fueron resueltos en comparación con el total de problemas registrados en la plataforma SATIS. Este indicador evalúa la efectividad de la División TIC en la resolución de incidencias y su capacidad para mantener la funcionalidad operativa en los sistemas de la universidad.",
-        url: "/indicators/indicator5",
-    },
-    {
         id: 6,
         nombre: "Productividad Analistas",
         descripcion: "Tasa de Cierre de Tickets de Soporte por Analista en el Área de TI",
@@ -47,12 +40,5 @@ export const indicadores = [
         descripcion: "Porcentaje de implementación de requerimientos aprobados para los sistemas de información",
         objetivo: "Mide el avance en la implementación de los requerimientos aprobados para los sistemas de información con respecto a las necesidades de los usuarios de la Universidad del Cauca.",
         url: "/indicators/indicator7",
-    },
-    {
-        id: 8,
-        nombre: "Disponibilidad Sistemas",
-        descripcion: "Disponibilidad de los Sistemas de Información de la Universidad del Cauca soportados por la División TIC",
-        objetivo: "Mide la disponibilidad de los sistemas de información que están en operación, soportados por la División TIC, que son utilizados por los usuarios de la Universidad del Cauca.",
-        url: "/indicators/indicator8",
     }
 ];
