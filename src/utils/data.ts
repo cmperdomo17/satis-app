@@ -22,7 +22,7 @@ export const indicadores = [
     },
     {
         id: 4,
-        nombre: "Requerimientos por Organización",
+        nombre: "Requerimientos por Equipo",
         descripcion: "Cantidad de requerimientos y tiempo medio de resolución según la organización",
         objetivo: "Identificar oportunidades de mejora evaluando el tiempo medio de resolución de los requerimientos según su organización, también teniendo en cuenta el número de estos.",
         url: "/indicators/indicator4",
